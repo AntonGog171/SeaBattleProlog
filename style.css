@@ -1,0 +1,146 @@
+.container {
+    display: grid;
+    grid-template-columns: 1fr; /* Single column layout */
+    justify-items: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
+}
+
+.ships-container {
+    position: absolute;
+    left: 500px; /* Adjust the distance from the left side of the screen */
+    top: 33px; /* Adjust the vertical position */
+    font-size: 30px;
+}
+#resetBtn {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+#startGameBtn {
+    padding: 10px 20px;
+    font-size: 20px;
+    background-color: gray;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    pointer-events: none; /* Disable pointer events by default */
+}
+
+#startGameBtn:disabled {
+    background-color: gray;
+    cursor: not-allowed;
+}
+
+#startGameBtn:enabled {
+    background-color: green;
+    pointer-events: auto; /* Enable pointer events when button is enabled */
+}
+
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(10, 40px); /* Adjust the size of each cell as needed */
+    grid-template-rows: repeat(10, 40px); /* Adjust the size of each cell as needed */
+    gap: 2px; /* Adjust the gap between cells as needed */
+}
+
+.grid-label {
+    font-weight: bold;
+    margin-top: 10px; /* Add space above the grid labels */
+}
+
+.grid div {
+    width: 40px; /* Adjust the size of each cell as needed */
+    height: 40px; /* Adjust the size of each cell as needed */
+    border: 1px solid #000; /* Border color */
+    box-sizing: border-box;
+}
+
+.player-grid {
+    border: 2px solid blue; /* Border color for the player's grid */
+}
+
+.computer-grid {
+    border: 2px solid red; /* Border color for the computer's grid */
+}
+
+.ship {
+    background-color: #333; /* Default color for ships */
+    border: 1px solid #000;
+    border-radius: 30%; /* Rounded shape for ships */
+    margin: 5px; /* Add some space between ships */
+}
+
+/* Specific styling for different types of ships */
+#ship1 {
+    width: 160px; /* Battleship size */
+    height: 40px;
+}
+#ship2,
+#ship3 {
+    width: 120px; /* Cruiser size */
+    height: 40px;
+}
+#ship4,
+#ship5,
+#ship6 {
+    width: 80px; /* Destroyer size */
+    height: 40px;
+}
+.congratulations-banner {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px;
+    font-size: 32px;
+    border-radius: 10px;
+    z-index: 9999; /* Ensure the banner appears on top of other elements */
+}
+.rotate-btn {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    position: absolute;
+    left: -30px; /* Adjust the distance between the button and the ship */
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+.rotate-symbol {
+    width: 20px; /* Adjust size of rotation symbol */
+    height: 20px;
+    /* Add any additional styling for the rotation symbol */
+}
+#ship7,
+#ship8,
+#ship9,
+#ship10 {
+    width: 40px; /* Torpedo Boat size */
+    height: 40px;
+}
+
+.ship:active {
+    cursor: move;
+}
+.missed-info {
+    position: absolute;
+    left: 1800px;"; /* Adjust the distance from the left side of the screen */
+    top: 100px; /* Adjust the vertical position */
+    font-size: 30px;
+}
+#missedInfo {
+    font-size: 20px; /* Adjust the font size as needed */
+}

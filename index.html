@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sea Battle Game</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div class="container">
+    <div class="ships-container">
+        <h2>Your ships</h2>
+        <div class="ship" id="ship1" draggable="true" data-size="4" data-rotation="horizontal"><button class="rotate-btn" onclick="toggleShipRotation('ship1')"><img src="rotation.jpg" alt="Rotate" class="rotate-symbol"></button></div> <!-- Battleship -->
+        <div class="ship" id="ship2" draggable="true" data-size="3" data-rotation="horizontal"><button class="rotate-btn" onclick="toggleShipRotation('ship2')"><img src="rotation.jpg" alt="Rotate" class="rotate-symbol"></button></div> <!-- Cruiser -->
+        <div class="ship" id="ship3" draggable="true" data-size="3" data-rotation="horizontal"><button class="rotate-btn" onclick="toggleShipRotation('ship3')"><img src="rotation.jpg" alt="Rotate" class="rotate-symbol"></button></div> <!-- Cruiser -->
+        <div class="ship" id="ship4" draggable="true" data-size="2" data-rotation="horizontal"><button class="rotate-btn" onclick="toggleShipRotation('ship4')"><img src="rotation.jpg" alt="Rotate" class="rotate-symbol"></button></div> <!-- Destroyer -->
+        <div class="ship" id="ship5" draggable="true" data-size="2" data-rotation="horizontal"><button class="rotate-btn" onclick="toggleShipRotation('ship5')"><img src="rotation.jpg" alt="Rotate" class="rotate-symbol"></button></div> <!-- Destroyer -->
+        <div class="ship" id="ship6" draggable="true" data-size="2" data-rotation="horizontal"><button class="rotate-btn" onclick="toggleShipRotation('ship5')"><img src="rotation.jpg" alt="Rotate" class="rotate-symbol"></button></div> <!-- Destroyer -->
+        <div class="ship" id="ship7" draggable="true" data-size="1" data-rotation="horizontal"><button class="rotate-btn" onclick="toggleShipRotation('ship7')"></button></div> <!-- Torpedo Boat -->
+        <div class="ship" id="ship8" draggable="true" data-size="1" data-rotation="horizontal"><button class="rotate-btn" onclick="toggleShipRotation('ship8')"></button></div> <!-- Torpedo Boat -->
+        <div class="ship" id="ship9" draggable="true" data-size="1" data-rotation="horizontal"><button class="rotate-btn" onclick="toggleShipRotation('ship9')"></button></div> <!-- Torpedo Boat -->
+        <div class="ship" id="ship10" draggable="true" data-size="1" data-rotation="horizontal"><button class="rotate-btn" onclick="toggleShipRotation('ship10')"></button></div> <!-- Torpedo Boat -->
+    </div>
+    <button id="startGameBtn" disabled>Start game</button>
+    <button id="resetBtn">Reset</button>
+
+    <div class="grid-label">Player's Grid</div>
+    <div class="grid player-grid">
+        <!-- Player's grid -->
+        <!-- This will be populated dynamically using JavaScript -->
+    </div>
+    <div class="grid-label">Computer's Grid</div>
+    <div class="grid computer-grid">
+        <!-- Computer's grid -->
+        <!-- This will be populated dynamically using JavaScript -->
+    </div>
+    <div class="missed-info">
+        <h2>Game Log</h2>
+        <textarea id="missedInfo" rows="30" cols="40" readonly></textarea>
+    </div>
+</div>
+<script>
+    // Function to toggle ship rotation
+    function toggleShipRotation(shipId) {
+        const ship = document.getElementById(shipId);
+        const rotation = ship.getAttribute('data-rotation');
+
+        if (rotation === 'horizontal') {
+            // Rotate the ship 90 degrees clockwise
+            ship.style.transform = 'rotate(90deg)';
+            ship.setAttribute('data-rotation', 'vertical');
+        } else {
+            // Rotate the ship back to its original position
+            ship.style.transform = 'rotate(0deg)';
+            ship.setAttribute('data-rotation', 'horizontal');
+        }
+    }
+</script>
+<script type="text/javascript" src="script.js"></script>
+<script type="text/javascript" src="tau-prolog.js"></script>
+</body>
+</html>
