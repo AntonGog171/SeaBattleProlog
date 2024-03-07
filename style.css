@@ -114,7 +114,7 @@
     border: none;
     padding: 0;
     position: absolute;
-    left: -30px; /* Adjust the distance between the button and the ship */
+    left: -50px; /* Adjust the distance between the button and the ship */
     transform: translateY(-50%);
     z-index: 1;
 }
